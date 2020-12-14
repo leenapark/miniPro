@@ -6,18 +6,16 @@ public class Contact {
 	private String name;
 	private String hp;
 	private String company;
-	private int crtPos;
+
 
 	// 생성자
-	public Contact(int crtPos, String name, String hp, String company) {
+	public Contact(String name, String hp, String company) {
 		this.name = name;
 		this.hp = hp;
 		this.company = company;
-		this.crtPos = crtPos;
 	}
 
-	
-	//메소드 g/s
+	// 메소드 g/s
 	public String getName() {
 		return name;
 	}
@@ -42,18 +40,11 @@ public class Contact {
 		this.company = company;
 	}
 
-	public int getCrtPos() {
-		return crtPos;
-	}
 
-	public void setCrtPos(int crtPos) {
-		this.crtPos = crtPos;
-	}
 
 	// 메소드 일반
 
 	public void showInfo() {
-		System.out.println(crtPos + ".\t" + name + "\t" + hp + "\t" + company);
+		System.out.println(".\t" + name + "\t" + hp + "\t" + company);
 	}
-
 }

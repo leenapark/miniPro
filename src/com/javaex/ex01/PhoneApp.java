@@ -37,8 +37,10 @@ public class PhoneApp {
 			System.out.print(">메뉴번호:");
 			String menu = sc.nextLine();
 
-			
 			if ("5".equals(menu)) {
+				System.out.println("*******************************");
+				System.out.println("*          감사합니다                     *");
+				System.out.println("*******************************");
 				break;
 			} else if ("1".equals(menu)) {
 				// 리스트
@@ -51,12 +53,13 @@ public class PhoneApp {
 						break;
 					}
 					String[] data = list.split(",");
-					Contact exilist = new Contact(no, data[0], data[1], data[2]);
-					no++;
-					
+					Contact exilist = new Contact(data[0], data[1], data[2]);
+
 					cList.add(exilist);
+					no++;
 				}
 				for (int i = 0; i < cList.size(); i++) {
+					System.out.print(i + 1);
 					cList.get(i).showInfo();
 				}
 				System.out.println("");
@@ -64,21 +67,48 @@ public class PhoneApp {
 				// 등록
 				System.out.println("<2.등록>");
 				System.out.print(">이름:");
-				Scanner sc2 = new Scanner(System.in);
-				String name = sc2.nextLine();
+				// Scanner sc2 = new Scanner(System.in);
+				String name = sc.nextLine();
 				System.out.print(">휴대전화:");
-				String hp = sc2.nextLine();
+				String hp = sc.nextLine();
 				System.out.print(">회사전화:");
-				String company = sc2.nextLine();
+				String company = sc.nextLine();
 
-				Contact enroll = new Contact(no, name, hp, company);
+				Contact enroll = new Contact(name, hp, company);
 
 				cList.add(enroll);
 
+				System.out.println("[등록되었습니다.]");
+				no++;
+			} else if ("3".equals(menu)) {
+				// 삭제 .remove
+				System.out.println("<3.삭제>");
+				System.out.print(">번호 : ");
+				int delete = sc.nextInt();
+				System.out.println("[삭제되었습니다.]");
+
+				cList.remove(delete - 1);
+
+			} else if ("4".equals(menu)) {
+				// 검색
+				String serch;
+				System.out.println("<4.검색>");
+				System.out.print(">이름: ");
+				serch = sc.nextLine();
+
+				for (int i = 0; i < cList.size(); i++) {
+					if (cList.get(i).getName().indexOf(serch) != -1) {
+						System.out.println(i + 1);
+						cList.get(i).showInfo();
+					}
+				}
+
+			} else {
+				System.out.println("[다시 입력해 주세요.]");
 			}
 
 		}
-		
+
 		bw.close();
 		ph.close();
 		sc.close();
