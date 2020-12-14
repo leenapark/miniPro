@@ -22,7 +22,7 @@ public class PhoneApp {
 		Writer fw = new FileWriter("C:\\javaStudy\\강의자료\\02.java_programming\\minipro\\PhoneDB2.txt");
 		BufferedWriter bw = new BufferedWriter(fw);
 
-		int no = 1;
+
 		Scanner sc = new Scanner(System.in);
 
 		System.out.println("*********************************");
@@ -56,7 +56,6 @@ public class PhoneApp {
 					Contact exilist = new Contact(data[0], data[1], data[2]);
 
 					cList.add(exilist);
-					no++;
 				}
 				for (int i = 0; i < cList.size(); i++) {
 					System.out.print(i + 1);
@@ -79,7 +78,7 @@ public class PhoneApp {
 				cList.add(enroll);
 
 				System.out.println("[등록되었습니다.]");
-				no++;
+
 			} else if ("3".equals(menu)) {
 				// 삭제 .remove
 				System.out.println("<3.삭제>");
