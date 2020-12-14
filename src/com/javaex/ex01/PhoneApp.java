@@ -74,10 +74,6 @@ public class PhoneApp {
 				Contact enroll = new Contact(no, name, hp, company);
 
 				cList.add(enroll);
-				
-				for(int i=0; i<cList.size(); i++) {
-					cList.get(i).showInfo();
-				}
 
 			}
 

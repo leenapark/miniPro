@@ -54,7 +54,6 @@ public class Contact {
 
 	public void showInfo() {
 		System.out.println(crtPos + ".\t" + name + "\t" + hp + "\t" + company);
-		crtPos++;
 	}
 
 }
