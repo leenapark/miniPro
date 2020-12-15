@@ -1,12 +1,9 @@
 package com.javaex.ex01;
 
 import java.io.BufferedReader;
-import java.io.BufferedWriter;
 import java.io.FileReader;
-import java.io.FileWriter;
 import java.io.IOException;
 import java.io.Reader;
-import java.io.Writer;
 import java.util.ArrayList;
 import java.util.Scanner;
 
@@ -19,8 +16,7 @@ public class PhoneApp {
 		Reader ph = new FileReader("C:\\javaStudy\\강의자료\\02.java_programming\\minipro\\PhoneDB.txt");
 		BufferedReader userph = new BufferedReader(ph);
 
-		Writer fw = new FileWriter("C:\\javaStudy\\강의자료\\02.java_programming\\minipro\\PhoneDB2.txt");
-		BufferedWriter bw = new BufferedWriter(fw);
+
 
 
 		Scanner sc = new Scanner(System.in);
@@ -108,7 +104,6 @@ public class PhoneApp {
 
 		}
 
-		bw.close();
 		ph.close();
 		sc.close();
 
